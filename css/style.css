@@ -1,0 +1,53 @@
+body {
+    margin: 0px;
+}
+
+#homeWrapper {
+    display: grid;
+    min-height: 150vh;
+    width: 100vw;
+    grid-template-columns: 100px 1fr 150px;
+    grid-template-rows: 150px 1fr 100px;
+    grid-template-areas: 
+    'hd hd nv'
+    'mn mn nv'
+    'ft ft nv'
+    ;
+}
+
+.removeExtrasDim {
+    margin: 0;
+    padding: 0;
+}
+
+.sticky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.sticky + .content {
+    padding-top: 50px;
+}
+
+
+#nav {
+    overflow: hidden;
+    display: flex;
+    grid-area: nv;
+    background-color:black;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.nav-decoration {
+    text-decoration: none;
+    color: white;
+}
+
+#nv-link-1, #nv-link-2, #nv-link-3, #nv-link-4, #nv-link-5 {
+}
+
+#footer {
+    grid-area: ft;
+}
