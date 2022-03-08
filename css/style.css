@@ -4,14 +4,13 @@ body {
 
 #homeWrapper {
     display: grid;
-    min-height: 150vh;
-    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
     grid-template-columns: 100px 1fr 150px;
-    grid-template-rows: 150px 1fr 100px;
+    grid-template-rows: 100px 1fr;
     grid-template-areas: 
     'hd hd nv'
     'mn mn nv'
-    'ft ft nv'
     ;
 }
 
@@ -20,19 +19,17 @@ body {
     padding: 0;
 }
 
-.sticky {
-    position: fixed;
-    width: 100%;
-    top: 0;
+#header {
+    grid-area: hd;
+    background-color: #655D8A;
 }
 
-.sticky + .content {
-    padding-top: 50px;
+#title {
+    font-size: 34px;
 }
 
 
 #nav {
-    overflow: hidden;
     display: flex;
     grid-area: nv;
     background-color:black;
@@ -43,11 +40,61 @@ body {
 .nav-decoration {
     text-decoration: none;
     color: white;
+    font-family: Inter;
 }
 
-#nv-link-1, #nv-link-2, #nv-link-3, #nv-link-4, #nv-link-5 {
+#content {
+    display: grid;
+    grid-area: mn;
+    grid-template-areas:
+    'in1'
+    'in2'
+    'ft'
+    ;
+    overflow-y: scroll;
+    grid-auto-flow: row;
+    grid-template-rows: 600px 500px 100px;
+    row-gap: 5rem;
+}
+
+#content::-webkit-scrollbar {
+    display: none;
+}
+
+#info-1 {
+    grid-area: in1;
+    margin: 100px 5rem 0 5rem;
+}
+
+#info-2 {
+    grid-area: in2;
+    margin: 0px 5rem 0 5rem;
+
+}
+
+.parent {
+    position: relative;
+    background-color: burlywood;
+}
+
+.child {
+    position: absolute;
+    background-color: darkorange;
+    height: 350px;
+    width: 700px;
+    top: 0px;
+    left: 0px;
+}
+
+.child-2 {
+    position: absolute;
+    background-color: white;
+    left: 700px;
+    top: 5rem;
 }
 
 #footer {
     grid-area: ft;
+    background-color: teal;
+    margin: 0px;
 }
