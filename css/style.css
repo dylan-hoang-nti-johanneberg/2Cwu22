@@ -14,6 +14,11 @@ body {
     ;
 }
 
+#nv-link-1 {
+    border-bottom:5px solid green;
+    padding: calc(80px/2) 0px calc(80px/2)  0px;
+}
+
 .removeExtrasDim {
     margin: 0;
     padding: 0;
@@ -34,7 +39,11 @@ body {
     grid-area: nv;
     background-color:black;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
+}
+
+.paddingNav {
+    padding: 2rem 0 2rem 0;
 }
 
 .nav-decoration {
@@ -43,7 +52,7 @@ body {
     font-family: Inter;
 }
 
-#content {
+#contentHome {
     display: grid;
     grid-area: mn;
     grid-template-areas:
@@ -53,7 +62,21 @@ body {
     ;
     overflow-y: scroll;
     grid-auto-flow: row;
-    grid-template-rows: 600px 500px 100px;
+    grid-template-rows: 600px 1fr 100px;
+    row-gap: 5rem;
+}
+
+#contentNews {
+    display: grid;
+    grid-area: mn;
+    grid-template-areas:
+    'in1'
+    'in2'
+    'ft'
+    ;
+    overflow-y: scroll;
+    grid-auto-flow: row;
+    grid-template-rows: 600px 1fr 100px;
     row-gap: 5rem;
 }
 
@@ -80,17 +103,17 @@ body {
 .child {
     position: absolute;
     background-color: darkorange;
-    height: 350px;
-    width: 700px;
+    height: 80%;
+    width: 60%;
     top: 0px;
     left: 0px;
 }
 
 .child-2 {
     position: absolute;
-    background-color: white;
-    left: 700px;
-    top: 5rem;
+    background-color: blue;
+    left: 35%;
+    top: 25%;
 }
 
 #footer {
