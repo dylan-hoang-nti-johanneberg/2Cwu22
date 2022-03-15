@@ -60,28 +60,8 @@ body {
     'in2'
     'ft'
     ;
-    overflow-y: scroll;
-    grid-auto-flow: row;
     grid-template-rows: 600px 1fr 100px;
     row-gap: 5rem;
-}
-
-#contentNews {
-    display: grid;
-    grid-area: mn;
-    grid-template-areas:
-    'in1'
-    'in2'
-    'ft'
-    ;
-    overflow-y: scroll;
-    grid-auto-flow: row;
-    grid-template-rows: 600px 1fr 100px;
-    row-gap: 5rem;
-}
-
-#content::-webkit-scrollbar {
-    display: none;
 }
 
 #info-1 {
@@ -92,15 +72,44 @@ body {
 #info-2 {
     grid-area: in2;
     margin: 0px 5rem 0 5rem;
+    
+}
 
+#contentNews {
+    display: grid;
+    grid-area: mn;
+    grid-template-areas:
+    'nw'
+    'ft'
+    ;
+    overflow-y: scroll;
+    grid-auto-flow: row;
+    grid-template-rows: 1fr 100px;
+}
+
+#contentNews::-webkit-scrollbar {
+    display: none;
+}
+
+#news {
+    grid-area: nw;
+    margin: 5rem 8rem 5rem 5rem;
+    display: grid;
+    grid-template-areas:
+    'tL iR pg'
+    'iL tR pg'
+    ;
+    grid-template-columns: 2fr 2fr 10px;
+    grid-template-rows: 400px 400px;
+    row-gap: 2rem;
+    column-gap: 5rem;
 }
 
 .parent {
     position: relative;
-    background-color: burlywood;
 }
 
-.child {
+.HomeChild-Default {
     position: absolute;
     background-color: darkorange;
     height: 80%;
@@ -109,11 +118,83 @@ body {
     left: 0px;
 }
 
-.child-2 {
+.HomeChild-2 {
     position: absolute;
     background-color: blue;
     left: 35%;
     top: 25%;
+}
+
+#text-L {
+    grid-area: tL;
+    background-color: black;
+    margin: 0;
+}
+
+#img-R {
+    grid-area: iR;
+    background-color: beige;
+}
+
+#text-R {
+    grid-area: tR;
+    background-color: brown;
+    margin: 0;
+}
+
+#img-L {
+    grid-area: iL;
+}
+
+#pageSelect {
+    grid-area: pg;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -2rem;
+}
+
+#contentCalendar {
+    display: grid;
+    grid-area: mn;
+    grid-template-areas:
+    'calC'
+    'rs'
+    'ft'
+    ;
+    overflow-y: scroll;
+    grid-auto-flow: row;
+    grid-template-rows: 500px 300px 100px;
+    row-gap: 4rem;
+    margin-top: 2rem;
+}
+
+#contentCalendar::-webkit-scrollbar {
+    display: none;
+}
+
+#calendarContainer {
+    display: grid;
+    grid-area: calC;
+    grid-template-areas: 
+    'cal events'
+    ;
+    grid-template-columns: 2fr 1fr;
+    margin: 0 3rem 0 3rem;
+}
+
+#calendar {
+    background-color: blanchedalmond;
+}
+
+#events {
+    background-color: chocolate;
+}
+
+#results {
+    grid-area: rs;
+    background-color: darkgoldenrod;
+    margin: 0 3rem 0 3rem;
 }
 
 #footer {
