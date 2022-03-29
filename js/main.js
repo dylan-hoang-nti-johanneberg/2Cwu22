@@ -1,12 +1,19 @@
-window.onscroll = function() {myFunction()};
+const calendarDays = document.getElementById("days")
+const currentDate = new Date().getDate()
 
-var navbar = document.getElementById("nav");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
+function createDays() {
+  let i = 1
+  while (i <= 31) {
+    day = document.createElement('li')
+    day.innerText = i
+    if (currentDate == i) {
+      day.classList.add('active')
+    }
+    calendarDays.appendChild(day)
+    i += 1
   }
+  console.log('exit')
 }
+
+createDays()
+console.log()
