@@ -15,7 +15,7 @@ body {
 }
 
 #nv-link-1 {
-    border-bottom:5px solid green;
+    border-bottom:5px solid #3a3a3a;
     padding: calc(80px/2) 0px calc(80px/2)  0px;
 }
 
@@ -26,7 +26,7 @@ body {
 
 #header {
     grid-area: hd;
-    background-color: #655D8A;
+    border-bottom: solid 5px black;
 }
 
 #title {
@@ -42,7 +42,16 @@ body {
     justify-content: flex-start;
 }
 
+.activeTab {
+    border-bottom: solid 3px whitesmoke;
+}
+
 .paddingNav {
+    padding: 2rem 0 2rem 0;
+    transition: 0.2s;
+}
+
+.paddingNavFixed {
     padding: 2rem 0 2rem 0;
 }
 
@@ -50,6 +59,10 @@ body {
     text-decoration: none;
     color: white;
     font-family: Inter;
+}
+
+.paddingNav:hover {
+    border-left: solid 6px green;
 }
 
 #contentHome {
@@ -60,13 +73,19 @@ body {
     'in2'
     'ft'
     ;
+    overflow-y: scroll;
+    grid-auto-flow: row;
     grid-template-rows: 600px 1fr 100px;
     row-gap: 5rem;
 }
 
+#contentHome::-webkit-scrollbar {
+    display: none;
+}
+
 #info-1 {
     grid-area: in1;
-    margin: 100px 5rem 0 5rem;
+    margin: 100px 2rem 0 2rem;
 }
 
 #info-2 {
@@ -92,6 +111,7 @@ body {
 }
 
 #news {
+    transition: opacity 0.3s ease-in-out;
     grid-area: nw;
     margin: 5rem 8rem 5rem 5rem;
     display: grid;
@@ -100,7 +120,7 @@ body {
     'iL tR pg'
     ;
     grid-template-columns: 2fr 2fr 10px;
-    grid-template-rows: 400px 400px;
+    grid-template-rows: 600px 600px;
     row-gap: 2rem;
     column-gap: 5rem;
 }
@@ -111,39 +131,88 @@ body {
 
 .HomeChild-Default {
     position: absolute;
-    background-color: darkorange;
-    height: 80%;
-    width: 60%;
+    height: 100%;
+    width: 50%;
     top: 0px;
     left: 0px;
 }
 
 .HomeChild-2 {
     position: absolute;
-    background-color: blue;
-    left: 35%;
-    top: 25%;
+    background-color: white;
+    left: 45%;
+    top: 30%;
 }
 
-#text-L {
+#imgHome {
+    background-image: url(../img/Keyboard.JPG);
+    background-size: cover;
+    background-position-y: -2rem;
+    background-position-x: -3.5rem;
+}
+
+#txtHome h2 {
+    margin-left: 1rem;
+}
+
+#Left1 {
     grid-area: tL;
-    background-color: black;
     margin: 0;
 }
 
-#img-R {
+#Right1 {
     grid-area: iR;
-    background-color: beige;
 }
 
-#text-R {
-    grid-area: tR;
-    background-color: brown;
+#Left2 {
+    grid-area: iL;
     margin: 0;
 }
 
-#img-L {
-    grid-area: iL;
+#Right2 {
+    grid-area: tR;
+}
+
+.newsTxtTitle {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 2rem 0 2rem;
+}
+
+.newsText {
+    font-family: 'Inter', sans-serif;
+    font-size: 21px;
+    padding: 0 2rem 0 2rem;
+}
+
+.page1IMG-Right {
+    background-image: url(../img/ClashRoyale.JPG);
+    background-size: cover;
+}
+
+.page1IMG-Left {
+    background-image: url(../img/MouseAndController.JPG);
+    background-size: cover;
+}
+
+.page2IMG-Left {
+    background-image: url(../img/TetrisAll_Clear.JPG);
+    background-size: cover;
+}
+
+.page2IMG-Right {
+    background-image: url(../img/TetrisDoge.JPG);
+    background-size: cover;
+}
+
+.page3IMG-Right {
+    background-image: url(../img/KeyboardSW.JPG);
+    background-size: cover;
+}
+
+.page3IMG-Left {
+    background-image: url(../img/RGB_PC.JPG);
+    background-size: cover;
 }
 
 #pageSelect {
@@ -152,6 +221,27 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-left: -2rem;
+    list-style: none;
+}
+
+#pageSelect li button {
+    margin-top: 3rem;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(51, 51, 51);
+    color: white;
+    border: solid 2px black;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+#pageSelect li button:hover {
+    background-color: white;
+    color: black;
+}
+
+.activePage {
+    text-decoration: underline red 3px;
 }
 
 #contentCalendar {
@@ -164,9 +254,13 @@ body {
     ;
     overflow-y: scroll;
     grid-auto-flow: row;
-    grid-template-rows: 500px 300px 100px;
+    grid-template-rows: 500px 350px 100px;
     row-gap: 4rem;
-    margin-top: 2rem;
+    padding-top: 2rem;
+}
+
+.BlackBG {
+    background-color: #1F1F1F;
 }
 
 #contentCalendar::-webkit-scrollbar {
@@ -181,13 +275,20 @@ body {
     ;
     grid-template-columns: 2fr 1fr;
     margin: 0 3rem 0 3rem;
+    column-gap: 6rem;
 }
 
 #calendar {
     grid-area: cal;
     display: grid;
-    grid-template-rows: 1fr 2fr;
-    background-color: blanchedalmond;
+    grid-template-rows: 100px 60px 1fr;
+    border: solid 3px black;
+    border-radius: 7px;
+}
+
+.TitleTop {
+    margin: 0;
+    display: flex;
 }
 
 #days {
@@ -197,22 +298,23 @@ body {
     list-style: none;
     padding: 0;
     background-color: #eee;
+    border-radius: 3px;
+    color: black;
 }
 
 #days li {
     display: flex;
     width: 13.9%;
     justify-content: center;
-    font-size: 24px;
+    font-size: 21px;
     padding-top: 0.75rem;
     font-family: Lato;
-    font-weight: lighter;
 }
 
 #weekdays {
     display: flex;
     justify-content: flex-start;
-    align-content: flex-end;
+    align-content: flex-start;
     flex-wrap: wrap;
     list-style: none;
     margin: 0;
@@ -224,33 +326,179 @@ body {
     display: flex;
     width: 13.9%;
     justify-content: center;
-    font-size: 24px;
+    font-size: 21px;
     margin-top: 1rem;
     font-family: Lato;
     font-weight: lighter;
 }
 
 li.active {
-        color: rgb(75, 138, 255);
+    color: rgb(75, 138, 255);
+    font-weight: 900;
 }
-
 
 ul#days {
     margin: 0;
 }
 
 #events {
-    background-color: chocolate;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    border-radius: 7px;
+    border: solid 3px black;
+}
+
+
+
+
+#description {
+    padding: 1.5rem 0 0 1rem;
+}
+
+.descriptiveText {
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 21px;
+    margin: 0;
 }
 
 #results {
     grid-area: rs;
-    background-color: darkgoldenrod;
+    display: grid;
+    grid-template-areas: 
+    'resTitle resTitle resTitle'
+    'infotext result match'
+    ;
+    grid-template-rows: 75px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 15px;
+    border: solid 3px black;
+    border-radius: 7px;
+    padding: 40px;
     margin: 0 3rem 0 3rem;
+}
+
+#resultsTitle {
+    grid-area: resTitle;
+    display: flex;
+}
+
+.centerFlx {
+    justify-content: center;
+    align-items: center;
+}
+
+.titles {
+    font-family: 'Lato', sans-serif;
+    font-size: 34px;
+}
+
+#infoText {
+    grid-area: infotext;
+}
+
+#score {
+    grid-area: result;
+    border-right: solid 3px black;
+    border-left: solid 3px black;
+    margin: 0;
+    padding-top: 2rem;
+    display: flex;
+    align-items: flex-start;
+    font-size: 55px;
+}
+
+#matchOverview {
+    grid-area: match;
+    margin: 0;
+    padding-left: 1rem;
+    font-size: 21px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+
+#contentAboutUs {
+    grid-area: mn;
+    grid-template-areas: 
+    'info'
+    'ft'
+    ;
+    grid-template-rows: 1fr 100px;
+    overflow-y: scroll;
+    grid-auto-flow: row;
+    display: grid;
+    padding-top: 2rem;
+    row-gap: 2rem;
+}
+
+#contentAboutUs::-webkit-scrollbar {
+    display: none;
+}
+
+#aboutUsContainer {
+    grid-area: info;
+    display: grid;
+    grid-template-areas:
+    'abtUsInfo abtUsimg'    
+    'abtUsInfo abtUsJoin'    
+    ;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 550px 1fr;
+    margin: 0 6rem 2rem 2rem;
+}
+
+#aboutUsText {
+    grid-area: abtUsInfo;
+    padding: 2rem 0 0 1rem;
+    border: solid 3px black;
+    border-radius: 7px;
+}
+
+#aboutUsImage {
+    grid-area: abtUsimg;
+    /* background-image: url(../img/Doge_homemade_meme.jpg);
+    background-size: cover; */
+    border: solid 3px black;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 2rem;
+
+}
+#aboutUsImage img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#aboutUsJoin {
+    grid-area: abtUsJoin;
+    padding: 2rem;
+    border: solid 3px black;
+    border-radius: 7px;
+}
+
+#aboutUsJoin h2 {
+    padding: 1rem 1rem 0 0;
+    margin: 0;
 }
 
 #footer {
     grid-area: ft;
     background-color: teal;
     margin: 0px;
+}
+
+.whiteTxt {
+    color: white;
+}
+
+.borderNews {
+    border: solid 3px black;
+    border-radius: 7px;
 }

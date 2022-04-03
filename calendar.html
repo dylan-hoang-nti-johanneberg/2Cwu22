@@ -21,8 +21,8 @@
             <li id="nv-link-2" class="paddingNav">
                 <a href="index.html" class="nav-decoration">Hem</a>
             </li>
-            <li id="nv-link-3" class="paddingNav">
-                <a href="calendar.html" class="nav-decoration">Calendar</a>
+            <li id="nv-link-3" class="paddingNav ">
+                <a href="calendar.html" class="nav-decoration activeTab">Calendar</a>
             </li>
             <li id="nv-link-4" class="paddingNav">
                 <a href="news.html" class="nav-decoration">News</a>
@@ -34,9 +34,10 @@
         
         <section id="contentCalendar">
 
-            <section id="calendarContainer">
+            <section id="calendarContainer" class="whiteTxt">
                 <section id="calendar">
-                    <ul id="weekdays">
+                    <h2 id="month" class="TitleTop centerFlx titles BlackBG">April</h2>
+                    <ul id="weekdays" class="whiteTxt">
                         <li>Må</li>
                         <li>Ti</li>
                         <li>On</li>
@@ -50,12 +51,22 @@
                     </ul>
                 </section>
                 <aside id="events">
-                    <h2></h2>
+                    <h2 id="eventTitle" class="TitleTop centerFlx titles BlackBG"></h2>
+                    <p id="description" class="descriptiveText BlackBG"></p>
+
                 </aside>
             </section>
 
-            <section id="results">
-
+            <section id="results" class="BlackBG whiteTxt">
+                <h2 id="resultsTitle" class="titles centerFlx">Latest Results</h2>
+                <p id="infoText" class="descriptiveText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eum officia culpa tenetur placeat voluptates.</p>
+                <h3 id="score" class="titles centerFlx">2 - 1</h3>
+                <h3 id="matchOverview" class="titles centerFlx">
+                    Match Overview
+                    <p class="descriptiveText Overview">
+                        WINS: 15 K: 20  
+                    </p>
+                </h3>
             </section>
             
 
