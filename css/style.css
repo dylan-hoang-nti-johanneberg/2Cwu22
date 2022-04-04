@@ -26,7 +26,14 @@ body {
 
 #header {
     grid-area: hd;
+    display: grid;
+    grid-template-columns: 750px 1fr;
     border-bottom: solid 5px black;
+}
+
+#logo {
+    background-image: url(../img/Logo.png);
+    background-size: cover;
 }
 
 #title {
@@ -75,7 +82,7 @@ body {
     ;
     overflow-y: scroll;
     grid-auto-flow: row;
-    grid-template-rows: 600px 1fr 100px;
+    grid-template-rows: 600px 1fr 250px;
     row-gap: 5rem;
 }
 
@@ -103,7 +110,7 @@ body {
     ;
     overflow-y: scroll;
     grid-auto-flow: row;
-    grid-template-rows: 1fr 100px;
+    grid-template-rows: 1fr 250px;
 }
 
 #contentNews::-webkit-scrollbar {
@@ -254,7 +261,7 @@ body {
     ;
     overflow-y: scroll;
     grid-auto-flow: row;
-    grid-template-rows: 500px 350px 100px;
+    grid-template-rows: 500px 350px 250px;
     row-gap: 4rem;
     padding-top: 2rem;
 }
@@ -426,7 +433,7 @@ ul#days {
     'info'
     'ft'
     ;
-    grid-template-rows: 1fr 100px;
+    grid-template-rows: 1fr 250px;
     overflow-y: scroll;
     grid-auto-flow: row;
     display: grid;
@@ -490,8 +497,38 @@ ul#days {
 
 #footer {
     grid-area: ft;
-    background-color: teal;
-    margin: 0px;
+    display: grid;
+    grid-template-areas: 
+    'inf1 inf2 inf3';
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #1F1F1F;
+    padding: 0 1rem 0 2rem;
+}
+
+#Footer1 {
+    grid-area: inf1;
+}
+
+#Footer2 {
+    grid-area: inf2;
+    
+}
+
+#Footer3 {
+    grid-area: inf3;
+
+}
+
+#footer p {
+    font-size: 21px;
+    padding: 0px;
+    margin-top: 1rem;
+    line-height: 140%;
+}
+
+#footer h2 {
+    font-size: 34px;
+    margin: 2rem 0 1rem 0;
 }
 
 .whiteTxt {
