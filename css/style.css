@@ -439,6 +439,7 @@ ul#days {
     font-size: 55px;
 }
 
+
 #matchOverview {
     grid-area: match;
     margin: 0;
@@ -450,6 +451,9 @@ ul#days {
     flex-direction: column;
 }
 
+#matchdesc {
+    grid-area: match;
+}
 
 #contentAboutUs {
     grid-area: mn;
@@ -480,7 +484,7 @@ ul#days {
     row-gap: 2rem;
     column-gap: 2rem;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     margin: 0 6rem 2rem 2rem;
 }
 
@@ -673,14 +677,18 @@ ul#days {
     }
 
     .descriptiveText {
-        font-size: 13px;
+        font-size: 21spx;
         padding: 5px;
     }
 
     #matchOverview {
         padding-left: 0;
     }
-
+    
+    #matchOverview h3 {
+        font-size: 21px;
+    }
+    
     #news {
         grid-template-areas: 
         'iR'
@@ -688,7 +696,7 @@ ul#days {
         'iL'
         'tR'
         'pg';
-        grid-template-rows: 600px 600px 600px 600px 100px;
+        grid-template-rows: 1fr 1fr 1fr 1fr 100px;
         grid-template-columns: 100%;
         margin: 2rem 2rem 0 2rem;
     }
